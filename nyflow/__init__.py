@@ -12,6 +12,12 @@ if is_simple_core:
     from nyflow.core_simple import setup_variable
 
 else:
-    pass
+    from nyflow.core import Variable
+    from nyflow.core import Function
+    from nyflow.core import using_config
+    from nyflow.core import no_grad
+    from nyflow.core import as_array
+    from nyflow.core import as_variable
+    from nyflow.core import setup_variable
 
 setup_variable()	

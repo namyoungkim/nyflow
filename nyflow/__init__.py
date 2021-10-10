@@ -1,6 +1,6 @@
 # =============================================================================
-is_simple_core = True
-# is_simple_core = False
+# is_simple_core = True
+is_simple_core = False
 # =============================================================================
 if is_simple_core:
     from nyflow.core_simple import Variable

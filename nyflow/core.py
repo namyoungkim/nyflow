@@ -249,9 +249,8 @@ class Pow(Function):
         return y
 
     def backward(self, gy):
-        x = self.inputs    # Variable 인스터스를 그대로 사용한다.
+        x, = self.inputs    # Variable 인스터스를 그대로 사용한다.
         c = self.c
-
         gx = c * x ** (c - 1) * gy
         return gx
 

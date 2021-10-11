@@ -20,4 +20,7 @@ else:
     from nyflow.core import as_variable
     from nyflow.core import setup_variable
 
+    
+    import dezero.functions
+
 setup_variable()	

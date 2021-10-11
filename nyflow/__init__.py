@@ -21,6 +21,6 @@ else:
     from nyflow.core import setup_variable
 
     
-    import dezero.functions
+    import nyflow.functions
 
 setup_variable()	

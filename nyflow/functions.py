@@ -1,5 +1,5 @@
 import numpy as np
-import dezero
+import nyflow
 # from nyflow import cuda, utils
 from nyflow.core import Function, Variable, as_variable, as_array
 

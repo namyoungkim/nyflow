@@ -1,6 +1,7 @@
 import weakref
 import numpy as np
 import contextlib
+import nyflow
 
 
 # =============================================================================
@@ -110,6 +111,24 @@ class Variable:
             if not retain_grad:
                 for y in f.outputs:
                     y().grad = None  # y is weakref
+
+    def reshape(self, *shape):
+        if len(shape) == 1 and isinstance(shape[0], (tuple, list)):
+            shape = shape[0]
+        ### F.reshape가 아닌 nyflow.functions.reshape 형태로 쓴 것은 순환 import를 피하기 위함이다.
+        return nyflow.functions.reshape(self, shape)
+
+    def transpose(self, *axes):
+        if len(axes) == 0:
+            axes = None
+        elif len(axes) == 1:
+            if isinstance(axes[0], (tuple, list)) or axes[0] is None:
+                axes = axes[0]
+        return nyflow.functions.transpose(self, axes)
+
+    @property
+    def T(self):
+        return nyflow.functions.transpose(self)
 
 
 def as_variable(obj):

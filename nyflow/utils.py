@@ -77,7 +77,7 @@ def plot_dot_graph(output, verbose=True, to_file='graph.png'):
 
     # 1. dot 데이터를 파일에 저장
     ## os.path.expanduser('~') : 사용자의 홈 디렉터리를 뜻하는 '~'를 절대 경로로 풀어준다.
-    tmp_dir = os.path.join(os.path.expanduser('~'), '.dezero')
+    tmp_dir = os.path.join(os.path.expanduser('~'), '.nyflow')
     if not os.path.exists(tmp_dir): # ~/.nyflow 디렉토리가 없다면 새로 생성
         os.mkdir(tmp_dir)
     graph_path = os.path.join(tmp_dir, 'tmp_graph.dot')
@@ -123,15 +123,15 @@ def sum_to(x, shape):
 
 
 def reshape_sum_backward(gy, x_shape, axis, keepdims):
-    """Reshape gradient appropriately for dezero.functions.sum's backward.
+    """Reshape gradient appropriately for nyflow.functions.sum's backward.
     Args:
-        gy (dezero.Variable): Gradient variable from the output by backprop.
+        gy (nyflow.Variable): Gradient variable from the output by backprop.
         x_shape (tuple): Shape used at sum function's forward.
         axis (None or int or tuple of ints): Axis used at sum function's
             forward.
         keepdims (bool): Keepdims used at sum function's forward.
     Returns:
-        dezero.Variable: Gradient variable which is reshaped appropriately
+        nyflow.Variable: Gradient variable which is reshaped appropriately
     """
     ndim = len(x_shape)
     tupled_axis = axis

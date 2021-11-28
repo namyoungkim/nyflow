@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
  
 setup(
     name = 'nyflow',
-    version = '0.0.7.4',
+    version = '0.0.7.5',
     description = 'nyfow is deeplearning framwork',
     author = 'namyoungKim',
     author_email = 'liniarq@gmail.com',
